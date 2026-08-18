@@ -6,11 +6,10 @@ Design an ER diagram for an Indian e-commerce platform with entities Customer, P
 
 ## Diagram Files
 
-The same diagram has been added in the following formats:
+The diagram is available in the following formats:
 
-- PNG: `er.png`
-- XML (draw.io): `er.drawio`
-- SVG: `ER.drawio.svg`
+- PNG: `ER-1.drawio.png`
+- SVG: `ER-1.drawio.svg`
 
 ## Notes
 
