@@ -132,3 +132,42 @@ ON DELETE SET NULL
 ON UPDATE CASCADE
 );
 -- SQLBook: Code
+INSERT INTO Category (CategoryName, Description) VALUES
+('Electronics', 'Gadgets and electronic appliances'),
+('Clothing', 'Apparel and accessories'),
+('Grocery', 'Daily food items and pantry essentials');
+INSERT INTO Seller (Name, Email, PhoneNumber, GSTIN, Rating) VALUES
+('TechRetail India', 'contact@techretail.in', '9876543210', '07AAAAA0000A1Z5', 4.8),
+('FashionHub', 'sales@fashionhub.in', '9876543211', '07BBBBB1111B1Z2', 4.5);
+INSERT INTO Product (Title, Price, StockQuantity, SellerID, CategoryID) VALUES
+('Wireless Headphones', 2999.00, 50, 1, 1),
+('Cotton T-Shirt', 799.00, 100, 2, 2),
+('Organic Almonds 500g', 450.00, 200, 2, 3);
+INSERT INTO Electronics (ProductID, Brand, ModelNo, WarrantyPeriod) VALUES
+(1, 'SoundBass', 'SB-2026', '1 Year');
+INSERT INTO Clothing (ProductID, Size, Color, Material) VALUES
+(2, 'L', 'Blue', '100% Cotton');
+INSERT INTO Grocery (ProductID, FSSAI_LicNo, ExpiryDate, IsPerishable, GenderTarget) VALUES
+(3, '10014011000123', '2026-12-31', FALSE, 'Unisex');
+INSERT INTO Customer (Name, Email, PhoneNumber) VALUES
+('Aarav Sharma', 'aarav.sharma@example.com', '9123456789');
+INSERT INTO Address (CustomerID, HouseNo, Street, Landmark, City, State, Pincode) VALUES
+(1, 'Flat 402', 'MG Road', 'Near Metro Station', 'Bengaluru', 'Karnataka', '560001');
+INSERT INTO `Order` (CustomerID, AddressID, TotalAmount, Status) VALUES
+(1, 1, 3798.00, 'Processing');
+INSERT INTO OrderItem (OrderID, ItemNo, ProductID, Quantity, UnitPrice, Subtotal) VALUES
+(1, 1, 1, 1, 2999.00, 2999.00),
+(1, 2, 2, 1, 799.00, 799.00);
+INSERT INTO Payment (OrderID, TransactionID, Amount, PaymentMethod, PaymentStatus) VALUES
+(1, 'TXN9876543210', 3798.00, 'UPI', 'Completed');
+INSERT INTO Delivery (OrderID, AddressID, TrackingNumber, Status, ExpectedDate) VALUES
+(1, 1, 'TRK123456789IN', 'Shipped', '2026-09-28');
+
+DELETE FROM `Order` WHERE OrderID = 1;
+SELECT * FROM OrderItem WHERE OrderID = 1;
+SELECT * FROM Payment WHERE OrderID = 1;
+SELECT * FROM Delivery WHERE OrderID = 1;
+DELETE FROM Category WHERE CategoryID = 1;
+SELECT ProductID, Title, CategoryID FROM Product WHERE ProductID = 1;
+SELECT * FROM Customer;
+SELECT * FROM Product;
