@@ -12,8 +12,6 @@ INNER JOIN Department d ON e.DeptID = d.DeptID;
 -- Retrieves all departments and their assigned employees, including departments that currently have no employees.
 SELECT
 d.DeptID,
-Name : Vanshika Azad
-UID: 25LBCS3242
 d.DeptName,
 e.EmpID,
 e.FirstName,
