@@ -14,6 +14,7 @@ This repository contains a complete set of Database Management System (DBMS) lab
 - `EXP8/` — Transactions, Savepoints, and Isolation Levels
 - `EXP9/` — Indexing and Query Performance Benchmarking
 - `EXP10/` — Query Optimization with EXPLAIN Analysis
+- `Certificates/` — Course and Skill Certifications
 
 ---
 
@@ -259,3 +260,16 @@ Example:
 ```sql
 USE ecommerce_db;
 SELECT * FROM Product;
+```
+
+---
+
+## Certifications
+
+- **Infosys Springboard — SQL Developer**
+  - Course Completion Certificate awarded to Vanshika Azad (Completed: November 16, 2026)
+  - File: [`Certificates/Infosys_Springboard_SQL_Developer.pdf`](Certificates/Infosys_Springboard_SQL_Developer.pdf)
+
+- **HackerRank — SQL (Basic)**
+  - Certificate of Accomplishment awarded to Vanshika Azad (Earned: November 13, 2026 | ID: `6DOC51FED36E`)
+  - File: [`Certificates/HackerRank_SQL_Basic.pdf`](Certificates/HackerRank_SQL_Basic.pdf)
