@@ -10,6 +10,10 @@ This repository contains a complete set of Database Management System (DBMS) lab
 - `EXP4/` — SQL Joins, Subqueries, and Query Analysis
 - `EXP5/` — Views, Hierarchies, and Recursive CTEs
 - `EXP6/` — Triggers, Audit Logging, and Stored Procedures
+- `EXP7/` — Database Normalization (UNF to BCNF)
+- `EXP8/` — Transactions, Savepoints, and Isolation Levels
+- `EXP9/` — Indexing and Query Performance Benchmarking
+- `EXP10/` — Query Optimization with EXPLAIN Analysis
 
 ---
 
@@ -147,6 +151,77 @@ Files:
 
 ---
 
+### EXP7: Database Normalization (UNF to BCNF)
+This experiment demonstrates the step-by-step normalization of a flat sales table into Boyce-Codd Normal Form.
+
+Concepts covered:
+- Unnormalized Form (UNF) with composite primary key
+- Decomposition into 1NF, 2NF, 3NF, and BCNF
+- Identifying partial and transitive dependencies
+- Creating normalized tables: `Customers`, `Orders`, `Products`, `Departments`, `Rep_Products`, `Order_Reps`
+- Verifying lossless-join decomposition with a multi-table JOIN
+
+File:
+- `EXP7/exp7.sql`
+
+---
+
+### EXP8: Transactions, Savepoints, and Isolation Levels
+This experiment demonstrates transaction control mechanisms and concurrency isolation in MySQL.
+
+Concepts covered:
+- `START TRANSACTION`, `COMMIT`, `ROLLBACK`
+- `SAVEPOINT` and `ROLLBACK TO SAVEPOINT` for partial undo
+- Simulating a failed transfer and recovery
+- `READ UNCOMMITTED` isolation level
+- Dirty read demonstration across two sessions
+- Session-level transaction isolation configuration
+
+Tables:
+- `Accounts`
+
+File:
+- `EXP8/exp8.sql`
+
+---
+
+### EXP9: Indexing and Query Performance Benchmarking
+This experiment explores the impact of indexing on query performance using a 5,000-row railway booking dataset.
+
+Concepts covered:
+- Bulk data generation using recursive CTEs
+- `EXPLAIN` for execution plan analysis
+- Full table scan vs. indexed scan comparison
+- Single-column index creation and benchmarking
+- Composite index (`train_no`, `journey_date`) for multi-column queries
+- Performance comparison: no index vs. single index vs. composite index
+
+Tables:
+- `Railway_Booking`
+
+File:
+- `EXP9/exp9.sql`
+
+---
+
+### EXP10: Query Optimization with EXPLAIN Analysis
+This experiment identifies five common slow query patterns on a 10,000-row sales dataset and demonstrates their optimized alternatives.
+
+Slow patterns and optimizations covered:
+- **Leading wildcard LIKE** → prefix-based `LIKE`
+- **Subquery with IN** → `INNER JOIN` rewrite
+- **Function on indexed column** (`YEAR()`) → range query
+- **OR on different columns** → `UNION ALL` decomposition
+- **Unindexed GROUP BY + ORDER BY** → covering index (`category`, `amount`)
+
+Tables:
+- `Sales_Data`
+
+File:
+- `EXP10/exp10.sql`
+
+---
+
 ## Technologies Used
 
 - MySQL / MariaDB compatible SQL
@@ -166,6 +241,10 @@ By completing these experiments, students will be able to:
 - Work with recursive data structures and hierarchies
 - Implement triggers for validation and auditing
 - Use stored procedures and transactions in database applications
+- Normalize databases from UNF through BCNF
+- Manage transactions with savepoints and understand isolation levels
+- Create and benchmark indexes for query performance tuning
+- Identify slow query patterns and apply optimization techniques using `EXPLAIN`
 
 ---
 
